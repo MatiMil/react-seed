@@ -31,7 +31,7 @@ export default class Layout extends React.Component {
 
         <div class="container" style={containerStyle}>
           <div class="row">
-            <div class="col-lg-12">
+            <div class="col-sm-12 col-md-12 col-lg-12">
                 <h1>{welcomeText.welcomeText}</h1>
 
                 {this.props.children}
