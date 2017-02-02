@@ -30,16 +30,16 @@ export default class NavigationBar extends React.Component {
               <span class="icon-bar"></span>
             </button>
           </div>
-          <div class={"navbar-collapse " + navClass} id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-              <li>
-                <IndexLink to="/" onClick={this.toggleCollapse.bind(this)}>Index</IndexLink>
-              </li>
-              <li>
-                <Link to="initial" onClick={this.toggleCollapse.bind(this)}>Initial</Link>
-              </li>
-            </ul>
-          </div>
+        </div>
+        <div class={"navbar-collapse " + navClass} id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li>
+              <IndexLink to="/" onClick={this.toggleCollapse.bind(this)}>Index</IndexLink>
+            </li>
+            <li>
+              <Link to="initial" onClick={this.toggleCollapse.bind(this)}>Initial</Link>
+            </li>
+          </ul>
         </div>
       </nav>
     );
