@@ -3,7 +3,7 @@ import { IndexLink, Link } from "react-router";
 
 export default class NavigationBar extends React.Component {
   constructor() {
-    super()
+    super();
     this.state = {
       collapsed: true,
     };
@@ -15,7 +15,6 @@ export default class NavigationBar extends React.Component {
   }
 
   render() {
-    const { location } = this.props;
     const { collapsed } = this.state;
     const navClass = collapsed ? "collapse" : "";
 
@@ -25,9 +24,9 @@ export default class NavigationBar extends React.Component {
           <div class="navbar-header">
             <button type="button" class="navbar-toggle" onClick={this.toggleCollapse.bind(this)} >
               <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
+              <span class="icon-bar" />
+              <span class="icon-bar" />
+              <span class="icon-bar" />
             </button>
           </div>
         </div>

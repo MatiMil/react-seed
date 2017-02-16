@@ -1,6 +1,6 @@
 import React from "react";
 
-export default class InitialPage extends React.Component {
+export default class Initial extends React.Component {
   render() {
 
     return (

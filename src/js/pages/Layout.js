@@ -1,6 +1,5 @@
 import React from "react"
 import { connect } from "react-redux"
-import { Link } from "react-router"
 
 import { fetchWelcomeText } from "../actions/welcomeTextActions"
 import NavigationBar from "../components/NavigationBar"
