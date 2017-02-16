@@ -4,7 +4,7 @@ import { Router, Route, IndexRoute, hashHistory } from "react-router"
 import { Provider } from "react-redux"
 
 import Index from "./pages/Index"
-import InitialPage from "./pages/InitialPage"
+import Initial from "./pages/Initial"
 import Layout from "./pages/Layout"
 import store from "./store"
 
@@ -14,8 +14,8 @@ ReactDOM.render(
 <Provider store={store}>
 	<Router history={hashHistory}>
 		<Route path="/" component={Layout}>
-			<IndexRoute component={Index}></IndexRoute>
-			<Route path="initial" name="initial" component={InitialPage}></Route>
+			<IndexRoute component={Index} />
+			<Route path="initial" component={Initial} />
 		</Route>
 	</Router>
 </Provider>, 
