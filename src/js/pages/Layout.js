@@ -2,7 +2,7 @@ import React from "react"
 import {connect} from "react-redux"
 import {HashRouter, Route, Link} from 'react-router-dom';
 
-import {fetchWelcomeText} from "../actions/welcomeTextActions"
+import {setWelcomeText, fetchText} from "../actions/welcomeTextActions"
 import NavigationBar from "../components/NavigationBar"
 
 import Index from "../pages/Index"
@@ -18,7 +18,11 @@ require('../../stylesheets/_all.scss');
 })
 export default class Layout extends React.Component {
     componentWillMount() {
-        this.props.dispatch(fetchWelcomeText());
+        this.props.dispatch(setWelcomeText('Hello World!'));
+    }
+
+    fetchTextFromServer() {
+        this.props.dispatch(fetchText());
     }
 
     render() {
@@ -37,6 +41,9 @@ export default class Layout extends React.Component {
                         <div class="row">
                             <div class="col-sm-12 col-md-12 col-lg-12">
                                 <h1>{welcomeText.welcomeText}</h1>
+                                <button onClick={this.fetchTextFromServer.bind(this)}>
+                                    Fetch another text
+                                </button>
 
                                 <Route exact path="/index" component={Index}/>
                                 <Route exact path="/initial" component={Initial}/>
