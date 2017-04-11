@@ -5,7 +5,7 @@ export default class IndexPage extends React.Component {
 
     return (
       <div>
-        <h2>Index Page</h2>
+        <h2 class="red-color">Index Page</h2>
       </div>
     );
   }

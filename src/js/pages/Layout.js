@@ -8,6 +8,9 @@ import NavigationBar from "../components/NavigationBar"
 import Index from "../pages/Index"
 import Initial from "../pages/Initial"
 
+// Require scss files
+require('../../stylesheets/_all.scss');
+
 @connect((store) => {
     return {
         welcomeText: store.welcomeText.welcomeText
