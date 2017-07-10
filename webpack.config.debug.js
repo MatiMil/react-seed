@@ -3,11 +3,11 @@ var path = require('path');
 
 module.exports = {
     context: path.join(__dirname, "src"),
-    devtool: "cheap-module-source-map",
+    devtool: "eval",
     entry: "./js/client.js",
     module: {
         loaders: [
-                 {
+            {
                 test: /\.jsx?$/,
                 exclude: /(node_modules|bower_components)/,
                 loader: 'babel-loader',
@@ -54,43 +54,5 @@ module.exports = {
         path: __dirname + "/src/",
         filename: "client.min.js"
     },
-    plugins:  [
-        // Important for production mode
-        // if this is set react takes a smaller version
-        new webpack.DefinePlugin({
-            'process.env': {
-                // This has effect on the react lib size
-                'NODE_ENV': JSON.stringify('production'),
-            }
-        }),
-        // Ignore plugins which we don't need in production mode
-        // locale is implmeneted in webpack/react but we don't need it
-        new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
-        // Canvas isnt necessary because canvas is implemented in the browser
-        new webpack.IgnorePlugin(/canvas|jsdom/, /konva/),
-        new webpack.optimize.AggressiveMergingPlugin(),
-        new webpack.optimize.OccurrenceOrderPlugin(),
-        new webpack.NoEmitOnErrorsPlugin(),
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'commons',
-            filename: 'commons.js',
-            minChunks: 2,
-        }),
-        // Uglifies js and minimize it
-        new webpack.optimize.UglifyJsPlugin({
-            mangle: true,
-            compress: {
-                warnings: false, // Suppress uglification warnings
-                pure_getters: true,
-                unsafe: true,
-                unsafe_comps: true,
-                screw_ie8: true
-            },
-            sourceMap:true,
-            output: {
-                comments: false,
-            },
-            exclude: [/\.min\.js$/gi] // skip pre-minified libs
-        }),
-    ],
+    plugins: []
 };

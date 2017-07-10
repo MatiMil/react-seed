@@ -1,3 +1,7 @@
 node_modules
 npm-debug.log
 .idea
+src/client.min.js
+src/client.min.js.map
+src/commons.js
+src/commons.js.map
