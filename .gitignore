@@ -5,3 +5,5 @@ src/client.min.js
 src/client.min.js.map
 src/commons.js
 src/commons.js.map
+.chrome
+.vscode
