@@ -28,6 +28,10 @@ module.exports = {
             {
                 test: /\.scss$/,
                 loaders: ['style-loader', 'css-loader', 'sass-loader']
+            },            
+            {
+                test: /\.less$/,
+                loader: "style-loader!css-loader!less-loader"
             },
             {
                 test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
@@ -71,11 +75,6 @@ module.exports = {
         new webpack.optimize.AggressiveMergingPlugin(),
         new webpack.optimize.OccurrenceOrderPlugin(),
         new webpack.NoEmitOnErrorsPlugin(),
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'commons',
-            filename: 'commons.js',
-            minChunks: 2,
-        }),
         // Uglifies js and minimize it
         new webpack.optimize.UglifyJsPlugin({
             mangle: true,

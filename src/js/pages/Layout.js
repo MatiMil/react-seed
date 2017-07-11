@@ -11,6 +11,9 @@ import Initial from "../pages/Initial"
 // Require scss files
 require('../../stylesheets/_all.scss');
 
+// require LESS files
+require('../../stylesheets/initial.less');
+
 @connect((store) => {
     return {
         welcomeText: store.welcomeText.welcomeText

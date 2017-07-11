@@ -30,6 +30,10 @@ module.exports = {
                 loaders: ['style-loader', 'css-loader', 'sass-loader']
             },
             {
+                test: /\.less$/,
+                 loader: "style-loader!css-loader!less-loader"
+            },
+            {
                 test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
                 loader: 'file-loader',
                 query: {

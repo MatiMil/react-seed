@@ -5,7 +5,7 @@ export default class Initial extends React.Component {
 
     return (
       <div>
-        <h2>Initial page</h2>
+        <h2 class="green">Initial page</h2>
       </div>
     );
   }
