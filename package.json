@@ -5,8 +5,18 @@
   "main": "client.js",
   "scripts": {
     "dev": "webpack-dev-server --content-base dev --inline --hot",
-    "build": "webpack -p --progress --config webpack.config.js",
-    "build_dev": "webpack --config webpack.config.debug.js"
+    "build:prod": "webpack -p --progress --config webpack.config.js",
+    "build:dev": "webpack --config webpack.config.debug.js",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
+  },
+  "jest": {
+    "setupFiles": ["./test/jestsetup.js"],
+    "snapshotSerializers": ["enzyme-to-json/serializer"],
+    "moduleNameMapper": {
+      "^.+\\.(css|scss|less)$": "identity-obj-proxy"
+    }
   },
   "repository": {
     "type": "git",
@@ -26,6 +36,7 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
+    "babel-jest": "^22.0.4",
     "babel-loader": "^7.0.0",
     "babel-plugin-react-html-attrs": "^2.1.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
@@ -35,12 +46,17 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "css-loader": "^0.28.8",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.0",
     "es6-promise": "^4.2.2",
     "file-loader": "^1.1.6",
+    "jest": "^22.0.4",
     "less": "^2.7.3",
     "less-loader": "^4.0.5",
     "node-sass": "^4.7.2",
     "raw-loader": "^0.5.1",
+    "react-test-renderer": "^16.2.0",
     "redux-logger": "^2.6.1",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.19.1",

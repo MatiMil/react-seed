@@ -1,6 +1,6 @@
 import React from "react"
 import {connect} from "react-redux"
-import {HashRouter, Route, Link} from 'react-router-dom';
+import {HashRouter, Route} from 'react-router-dom';
 
 import {setWelcomeText, fetchText} from "../actions/welcomeTextActions"
 import NavigationBar from "../components/NavigationBar"
