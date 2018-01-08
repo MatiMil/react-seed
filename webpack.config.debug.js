@@ -1,5 +1,4 @@
-var webpack = require('webpack');
-var path = require('path');
+let path = require('path');
 
 module.exports = {
     context: path.join(__dirname, "src"),
@@ -55,7 +54,7 @@ module.exports = {
         ]
     },
     output: {
-        path: __dirname + "/src/",
+        path: path.join(__dirname, "src"),
         filename: "client.min.js"
     },
     plugins: []

@@ -1,9 +1,9 @@
-var webpack = require('webpack');
-var path = require('path');
+let webpack = require('webpack');
+let path = require('path');
 
 module.exports = {
     context: path.join(__dirname, "src"),
-    devtool: "cheap-module-source-map",
+    devtool: "source-map",
     entry: "./js/client.js",
     module: {
         loaders: [
@@ -55,7 +55,7 @@ module.exports = {
         ]
     },
     output: {
-        path: __dirname + "/src/",
+        path: path.join(__dirname, "dist"),
         filename: "client.min.js"
     },
     plugins:  [
