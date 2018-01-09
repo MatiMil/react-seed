@@ -4,7 +4,7 @@
   "description": "A seed project for react js apps",
   "main": "client.js",
   "scripts": {
-    "dev": "webpack-dev-server --content-base dev --inline --hot",
+    "dev": "webpack-dev-server --config webpack.config.debug.js --content-base dev --inline --hot",
     "build:prod": "webpack -p --progress --config webpack.config.js",
     "build:dev": "webpack --config webpack.config.debug.js",
     "test": "jest",
@@ -72,6 +72,7 @@
   "keywords": [
     "react",
     "seed",
+    "mobx",
     "js",
     "babel",
     "webpack"

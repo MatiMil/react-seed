@@ -1,4 +1,6 @@
+let webpack = require('webpack');
 let path = require('path');
+
 
 module.exports = {
     context: path.join(__dirname, "src"),
@@ -57,5 +59,12 @@ module.exports = {
         path: path.join(__dirname, "src"),
         filename: "client.min.js"
     },
-    plugins: []
+    plugins: [
+        new webpack.DefinePlugin({
+            'process.env': {
+                // This has effect on the react lib size
+                'NODE_ENV': JSON.stringify('develop'),
+            }
+        }),
+    ]
 };
