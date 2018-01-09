@@ -5,7 +5,7 @@ class WelcomeTextStore {
     @observable welcomeText = "Hello World";
     @observable error = '';
     @action fetchRandomText() {
-        fetch(config.BASE_URL + 'posts/1', {
+        return fetch(config.BASE_URL + 'posts/1', {
             method: 'GET',
             headers: {
                 'Accept': 'application/json',
@@ -20,19 +20,13 @@ class WelcomeTextStore {
                     });
 
                 } else {
-                    response.json().then(() => {
-                        this.error = "Error on fetching";
-                        throw error;
-                    });
-
+                    this.error = "Error on fetching";
                 }
             })
             .catch(
                 error => {
-                    error.json().then(() => {
-                        this.error = "Error on fetching";
-                        throw error;
-                    });
+                    this.error = "Error on fetching";
+                    throw error;
                 }
             );
     }
