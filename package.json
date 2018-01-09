@@ -12,8 +12,12 @@
     "test:coverage": "jest --coverage"
   },
   "jest": {
-    "setupFiles": ["./test/jestsetup.js"],
-    "snapshotSerializers": ["enzyme-to-json/serializer"],
+    "setupFiles": [
+      "./test/jestsetup.js"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
     "moduleNameMapper": {
       "^.+\\.(css|scss|less)$": "identity-obj-proxy"
     }
@@ -23,14 +27,12 @@
     "url": "git+https://github.com/MatiMil/react-seed.git"
   },
   "dependencies": {
+    "mobx": "^3.4.1",
+    "mobx-react": "^4.3.5",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-redux": "^4.4.5",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
-    "redux": "^3.5.2",
-    "redux-promise-middleware": "^3.2.0",
-    "redux-thunk": "^2.1.0",
     "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
@@ -51,6 +53,7 @@
     "enzyme-to-json": "^3.3.0",
     "es6-promise": "^4.2.2",
     "file-loader": "^1.1.6",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^22.0.4",
     "less": "^2.7.3",
     "less-loader": "^4.0.5",

@@ -13,7 +13,7 @@ module.exports = {
                 query: {
                     babelrc: false,
                     presets: ['react', 'env', 'stage-0'],
-                    plugins: ['react-html-attrs', 'transform-class-properties', 'transform-decorators-legacy'],
+                    plugins: ['react-html-attrs', 'transform-decorators-legacy', 'transform-class-properties'],
                 }
             },
             {

@@ -1,14 +1,11 @@
 import React from "react"
 import Layout from "../src/js/pages/Layout"
-import {Provider} from "react-redux"
-
-import store from "../src/js/store"
+import welcomeTextStore from "../src/js/stores/welcomeTextStore"
 
 test('Render Layout', () => {
     const wrapper = shallow(
-        <Provider store={store}>
-            <Layout />
-        </Provider>,
+        <Layout welcomeTextStore={welcomeTextStore}/>
     );
+
     expect(wrapper).toMatchSnapshot();
 });

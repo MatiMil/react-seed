@@ -1,22 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { observable } from "mobx";
+import { observer } from "mobx-react";
 
+@observer
 export default class NavigationBar extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      collapsed: true,
-    };
-  }
+
+  @observable collapse = true;
 
   toggleCollapse() {
-    const collapsed = !this.state.collapsed;
-    this.setState({collapsed});
+    this.collapse = !this.collapse;
   }
 
   render() {
-    const { collapsed } = this.state;
-    const navClass = collapsed ? "collapse" : "";
+    const navClass = this.collapse ? "collapse" : "";
 
     return (
       <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">

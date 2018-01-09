@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render Layout 1`] = `
+<HashRouter>
+  <div>
+    <NavigationBar />
+    <div
+      className="container"
+      style={
+        Object {
+          "marginTop": "60px",
+        }
+      }
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="col-xs-12"
+        >
+          <h1>
+            Hello World
+          </h1>
+          <button
+            className="btn btn-primary"
+            onClick={[Function]}
+          >
+            Fetch another text
+          </button>
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/index"
+          />
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/initial"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</HashRouter>
+`;
