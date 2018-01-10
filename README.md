@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/MatiMil/react-seed.svg?branch=master)](https://travis-ci.org/MatiMil/react-seed.svg)
+
 # Installation
 
 1. Open terminal, change to this project directory and run `npm i`
