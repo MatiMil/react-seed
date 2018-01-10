@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/MatiMil/react-seed.svg?branch=master)](https://travis-ci.org/MatiMil/react-seed.svg)
+[![Build Status](https://travis-ci.org/MatiMil/react-seed.svg)](https://travis-ci.org/MatiMil/react-seed)
 
 # Installation
 
