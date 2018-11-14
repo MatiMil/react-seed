@@ -1,13 +1,14 @@
 let webpack = require('webpack');
 let path = require('path');
+let UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
     context: path.join(__dirname, "src"),
+    mode:"production",
     devtool: "source-map",
     entry: "./js/client.js",
     module: {
-        loaders: [
-                 {
+        rules: [{
                 test: /\.jsx?$/,
                 exclude: /(node_modules|bower_components)/,
                 loader: 'babel-loader',
@@ -51,12 +52,32 @@ module.exports = {
             {
                 test: /\.html$/,
                 loader: 'html-loader'
-            }
-        ]
+        }]
     },
     output: {
         path: path.join(__dirname, "dist"),
         filename: "client.min.js"
+    },
+    optimization: {
+        minimizer: [
+            new UglifyJsPlugin({
+                uglifyOptions: {
+                    mangle: true,
+                    compress: {
+                        warnings: false, // Suppress uglification warnings
+                        pure_getters: true,
+                        unsafe: true,
+                        unsafe_comps: true,
+                        screw_ie8: true
+                    },
+                    output: {
+                        comments: false,
+                    }
+                },
+                sourceMap:true,
+                exclude: [/\.min\.js$/gi] // skip pre-minified libs
+            })
+        ]
     },
     plugins:  [
         // Important for production mode
@@ -75,21 +96,5 @@ module.exports = {
         new webpack.optimize.AggressiveMergingPlugin(),
         new webpack.optimize.OccurrenceOrderPlugin(),
         new webpack.NoEmitOnErrorsPlugin(),
-        // Uglifies js and minimize it
-        new webpack.optimize.UglifyJsPlugin({
-            mangle: true,
-            compress: {
-                warnings: false, // Suppress uglification warnings
-                pure_getters: true,
-                unsafe: true,
-                unsafe_comps: true,
-                screw_ie8: true
-            },
-            sourceMap:true,
-            output: {
-                comments: false,
-            },
-            exclude: [/\.min\.js$/gi] // skip pre-minified libs
-        }),
     ],
 };

@@ -4,11 +4,11 @@ let path = require('path');
 
 module.exports = {
     context: path.join(__dirname, "src"),
+    mode:"development",
     devtool: "eval",
     entry: "./js/client.js",
     module: {
-        loaders: [
-            {
+        rules: [{
                 test: /\.jsx?$/,
                 exclude: /(node_modules|bower_components)/,
                 loader: 'babel-loader',
@@ -52,8 +52,7 @@ module.exports = {
             {
                 test: /\.html$/,
                 loader: 'html-loader'
-            }
-        ]
+        }]
     },
     output: {
         path: path.join(__dirname, "src"),
