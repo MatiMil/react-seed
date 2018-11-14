@@ -1,0 +1,12 @@
+{
+  "env": {
+    "test": {
+      "presets":[
+        "env",
+        "stage-0",
+        "react"
+      ],
+      "plugins": ["react-html-attrs", "transform-decorators-legacy", "transform-class-properties"]
+    }
+  }
+}

@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+  - "stable"
+script:
+  - npm test
+  - npm run build:prod
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $github_token
+  on:
+    branch: master
